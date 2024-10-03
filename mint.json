@@ -1,0 +1,66 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "SmartGraph",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+
+  "colors": {
+    "primary": "#B22222",
+    "light": "#FF7F7F",
+    "dark": "#8B0000",
+    "anchors": {
+      "from": "#B22222",
+      "to": "#FF6347"
+    }
+  },
+
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "topbarCtaButton": {
+    "type": "github",
+    "url": "https://github.com/waveuphq/smartgraph"
+  },
+  "tabs": [
+    {
+      "name": "Examples",
+      "url": "examples"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": ["introduction", "quickstart", "development"]
+    },
+    {
+      "group": "Essentials",
+      "pages": [
+        "essentials/concepts",
+        "essentials/pipeline",
+        "essentials/state",
+        "essentials/persistence",
+        "essentials/ai-assistants",
+        "essentials/custom-component",
+        "essentials/debugging",
+        "essentials/testing"
+      ]
+    },
+    {
+      "group": "Advanced",
+      "pages": ["advanced/tools"]
+    },
+    {
+      "group": "Examples",
+      "pages": ["examples/simple-chat"]
+    }
+  ],
+  "footerSocials": {
+    "github": "https://github.com/waveuphq",
+    "youtube": "https://www.youtube.com/@SmartSystemsWaveup",
+    "website": "https://waveup.dev"
+  }
+}

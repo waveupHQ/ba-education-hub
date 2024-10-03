@@ -1,0 +1,88 @@
+---
+title: "Core Concepts"
+description: Learn about the fundamental building blocks of SmartGraph, including ReactiveSmartGraph, Pipeline, and ReactiveComponent.
+icon: "heart"
+---
+
+SmartGraph is built on a few key abstractions that work together to create powerful, flexible LLM applications. Understanding these core concepts is crucial to effectively using SmartGraph.
+
+## ReactiveSmartGraph
+
+The `ReactiveSmartGraph` class is the heart of SmartGraph. It represents the entire application structure and manages the connections between different pipelines and components.
+
+```python
+from smartgraph import ReactiveSmartGraph
+
+graph = ReactiveSmartGraph()
+```
+
+Think of `ReactiveSmartGraph` as the main application container, similar to how you might think of a React app's root component.
+
+## Pipeline
+
+A `Pipeline` is a sequence of connected components that process data. It's how you organize and structure your data flow within the graph.
+
+```python
+pipeline = graph.create_pipeline("MyPipeline")
+```
+
+Pipelines in SmartGraph are analogous to the way you might chain methods in a data processing library like Pandas, but with the added power of reactivity and complex branching.
+
+## ReactiveComponent
+
+`ReactiveComponent` is the base class for all components in SmartGraph. It provides the core functionality for processing input data and managing state.
+
+```python
+from smartgraph import ReactiveComponent
+
+class MyCustomComponent(ReactiveComponent):
+    def process(self, input_data):
+        # Process the input data
+        return processed_data
+```
+
+Components in SmartGraph are similar to React components, but instead of rendering UI, they process data in your AI pipeline.
+
+## Putting It All Together
+
+Here's how these concepts work together:
+
+1. You create a `ReactiveSmartGraph` instance.
+2. You add one or more `Pipeline`s to your graph.
+3. You add `ReactiveComponent`s to your pipelines.
+4. You connect components within and across pipelines as needed.
+5. Finally, you compile the graph and execute it.
+
+Here's a simple example:
+
+```bash
+export OPENAI_API_KEY=""
+```
+
+```python
+from smartgraph import ReactiveSmartGraph
+from smartgraph.components import TextInputHandler, CompletionComponent
+
+# Create the graph
+graph = ReactiveSmartGraph()
+
+# Create a pipeline
+pipeline = graph.create_pipeline("SimpleLLM")
+
+# Add components to the pipeline
+pipeline.add_component(TextInputHandler("TextInput"))
+pipeline.add_component(CompletionComponent("LLM", model="gpt-4o-mini"))
+
+# Compile the graph
+graph.compile()
+
+# Execute the pipeline
+result = await graph.execute("SimpleLLM", "Tell me a joke")
+print(result)
+```
+
+In this example, we create a simple pipeline that takes text input and passes it to an LLM for completion.
+
+## Next Steps
+
+Now that you understand the core concepts of SmartGraph, you're ready to dive deeper into how to control the flow of data through your pipelines. Head over to the [Controlling Flow](./pipeline) section to learn more about creating dynamic workflows using pipelines and input handlers.
