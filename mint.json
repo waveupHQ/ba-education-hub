@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "SmartGraph",
+  "name": "ba-education-hub",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
@@ -23,44 +23,85 @@
   },
   "topbarCtaButton": {
     "type": "github",
-    "url": "https://github.com/waveuphq/smartgraph"
+    "url": "https://github.com/waveupHQ/ba-education-hub.git"
   },
   "tabs": [
     {
-      "name": "Examples",
-      "url": "examples"
+      "name": "Tutorials",
+      "url": "tutorials"
+    },
+    {
+      "name": "Case Studies",
+      "url": "case-studies"
+    },
+    {
+      "name": "Resources",
+      "url": "resources"
+    },
+    {
+      "name": "Community",
+      "url": "community"
     }
   ],
+  "primaryTab": {
+    "name": "Learn"
+  },
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": ["learn/introduction", "learn/quickstart", "learn/development"]
     },
     {
       "group": "Essentials",
       "pages": [
-        "essentials/concepts",
-        "essentials/pipeline",
-        "essentials/state",
-        "essentials/persistence",
-        "essentials/ai-assistants",
-        "essentials/custom-component",
-        "essentials/debugging",
-        "essentials/testing"
+        "learn/essentials/concepts",
+        "learn/essentials/skills",
+        "learn/essentials/tools"
       ]
     },
     {
-      "group": "Advanced",
-      "pages": ["advanced/tools"]
+      "group": "Advanced Topics",
+      "pages": [
+        "learn/advanced/ai-in-ba",
+        "learn/advanced/data-analysis",
+        "learn/advanced/digital-transformation"
+      ]
     },
     {
-      "group": "Examples",
-      "pages": ["examples/simple-chat"]
+      "group": "Tutorials",
+      "pages": [
+        "tutorials/index",
+        "tutorials/process-mapping",
+        "tutorials/requirements-gathering",
+        "tutorials/data-visualization"
+      ]
+    },
+    {
+      "group": "Case Studies",
+      "pages": [
+        "case-studies/index",
+        "case-studies/finance",
+        "case-studies/healthcare",
+        "case-studies/technology"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "resources/index",
+        "resources/templates",
+        "resources/checklists",
+        "resources/recommended-reading"
+      ]
+    },
+    {
+      "group": "Community",
+      "pages": ["community/index", "community/events", "community/contribute"]
     }
   ],
   "footerSocials": {
     "github": "https://github.com/waveuphq",
-    "youtube": "https://www.youtube.com/@SmartSystemsWaveup",
+    "youtube": "https://www.youtube.com/@SmartSolutionsBA",
     "website": "https://waveup.dev"
   }
 }
