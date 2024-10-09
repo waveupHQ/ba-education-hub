@@ -49,21 +49,29 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["learn/introduction", "learn/quickstart", "learn/development"]
+      "pages": ["learn/quickstart", "learn/introduction"]
     },
     {
       "group": "Essentials",
       "pages": [
+        "learn/essentials/business-analysis",
         "learn/essentials/concepts",
+        "learn/essentials/baccm",
         "learn/essentials/skills",
+        "learn/essentials/communication",
+        "learn/essentials/problem-solving",
+        "learn/essentials/data-analysis",
+        "learn/essentials/requirements-elicitation-and-management",
         "learn/essentials/tools"
       ]
     },
     {
       "group": "Advanced Topics",
       "pages": [
+        "learn/advanced/business-analyst-career-path",
+        "learn/advanced/ba-and-friends",
         "learn/advanced/ai-in-ba",
-        "learn/advanced/data-analysis",
+        "learn/advanced/ai-data-analysis",
         "learn/advanced/digital-transformation"
       ]
     },
@@ -92,6 +100,14 @@
         "resources/templates",
         "resources/checklists",
         "resources/recommended-reading"
+      ]
+    },
+    {
+      "group": "Knowledge",
+      "pages": [
+        "knowledge/strategy-analysis",
+        "knowledge/requirements-life-cycle",
+        "knowledge/solution-evaluation"
       ]
     },
     {

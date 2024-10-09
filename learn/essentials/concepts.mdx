@@ -1,88 +1,135 @@
 ---
-title: "Core Concepts"
-description: Learn about the fundamental building blocks of SmartGraph, including ReactiveSmartGraph, Pipeline, and ReactiveComponent.
-icon: "heart"
+title: "The Building Blocks of Business Analysis"
+sidebarTitle: "BA Fundamentals"
+description: "Explore the key concepts of business analysis, including stakeholders, requirements, and scope management. Learn how these foundational elements work together to drive successful projects."
+icon: puzzle-piece
 ---
 
-SmartGraph is built on a few key abstractions that work together to create powerful, flexible LLM applications. Understanding these core concepts is crucial to effectively using SmartGraph.
+Welcome back, future business analysis superstars! In the last page, we got a bird's-eye view of what business analysis is all about. Now, it's time to zoom in and examine the key concepts that form the foundation of BA work. Think of these concepts as the LEGO blocks of business analysis – master these, and you'll be building impressive BA structures in no time!
 
-## ReactiveSmartGraph
+## Stakeholders: The Cast of Characters in Your BA Drama
 
-The `ReactiveSmartGraph` class is the heart of SmartGraph. It represents the entire application structure and manages the connections between different pipelines and components.
+Imagine you're directing a play. Your stakeholders are all the people involved in making that play a success – from the lead actors to the person who sweeps the stage after the show. In business analysis, stakeholders are individuals or groups who have an interest in, or are affected by, the project you're working on.
 
-```python
-from smartgraph import ReactiveSmartGraph
+### Types of Stakeholders
 
-graph = ReactiveSmartGraph()
-```
+1. **The Big Cheese:** These are your executive stakeholders. They're the ones with the power to greenlight projects and sign checks.
 
-Think of `ReactiveSmartGraph` as the main application container, similar to how you might think of a React app's root component.
+2. **The End Users:** The folks who will actually use whatever solution you come up with. Ignore them at your peril!
 
-## Pipeline
+3. **The Tech Wizards:** Your IT team, developers, and other technical experts who will bring the solution to life.
 
-A `Pipeline` is a sequence of connected components that process data. It's how you organize and structure your data flow within the graph.
+4. **The Money Managers:** Finance teams who keep an eye on the budget and ROI.
 
-```python
-pipeline = graph.create_pipeline("MyPipeline")
-```
+5. **The Regulation Rockstars:** Legal and compliance teams who ensure everything stays above board.
 
-Pipelines in SmartGraph are analogous to the way you might chain methods in a data processing library like Pandas, but with the added power of reactivity and complex branching.
+<Note>
+  **Try This:** Think about a project at your workplace (or your last big
+  purchase if you're not working). Who were all the stakeholders involved? You
+  might be surprised at how many you can identify!
+</Note>
 
-## ReactiveComponent
+### Stakeholder Management: Herding Cats with Diplomacy
 
-`ReactiveComponent` is the base class for all components in SmartGraph. It provides the core functionality for processing input data and managing state.
+Managing stakeholders is often like herding cats – if the cats all had different opinions and the power to derail your project. Here are some tips from BA veterans:
 
-```python
-from smartgraph import ReactiveComponent
+> "Communication is key," says Krzysztof from sunscrapers.com, an experienced IT Project Manager and Product Owner. "Each stakeholder may prefer different communication methods, such as email, video calls, or in-person meetings. A successful plan customizes both the medium and the frequency of communication based on stakeholder needs. This ensures timely updates and builds trust by keeping everyone informed at an appropriate level​"
 
-class MyCustomComponent(ReactiveComponent):
-    def process(self, input_data):
-        # Process the input data
-        return processed_data
-```
+1. **Identify:** Figure out who your stakeholders are early in the project.
+2. **Analyze:** Understand their interests, influence, and potential impact on the project.
+3. **Plan:** Develop strategies to engage each stakeholder effectively.
+4. **Engage:** Keep stakeholders informed and involved throughout the project.
 
-Components in SmartGraph are similar to React components, but instead of rendering UI, they process data in your AI pipeline.
+<Warning>
+  **Remember:** Not all stakeholders are created equal. Some will need more of
+  your time and attention than others. Prioritize based on their influence and
+  interest in the project.
+</Warning>
 
-## Putting It All Together
+## Requirements: The North Star of Your Project
 
-Here's how these concepts work together:
+If stakeholders are the characters in your BA drama, requirements are the script. They define what needs to be done to achieve the project's objectives.
 
-1. You create a `ReactiveSmartGraph` instance.
-2. You add one or more `Pipeline`s to your graph.
-3. You add `ReactiveComponent`s to your pipelines.
-4. You connect components within and across pipelines as needed.
-5. Finally, you compile the graph and execute it.
+### Types of Requirements
 
-Here's a simple example:
+1. **Business Requirements:** The big picture stuff. What does the organization want to achieve?
+2. **User Requirements:** What do the end-users need to do their jobs effectively?
+3. **Functional Requirements:** The nitty-gritty of what the solution needs to do.
+4. **Non-Functional Requirements:** How the system should behave (e.g., performance, security).
 
-```bash
-export OPENAI_API_KEY=""
-```
+<Note>
+  **Tech Talk:** You might hear people talk about "user stories" in Agile
+  projects. These are just a specific way of framing user requirements,
+  typically in the format: "As a [type of user], I want [goal] so that
+  [reason]."
+</Note>
+### The Art of Requirements Elicitation
 
-```python
-from smartgraph import ReactiveSmartGraph
-from smartgraph.components import TextInputHandler, CompletionComponent
+Gathering requirements is part science, part art. You need to be part detective, part therapist, and part fortune-teller.
 
-# Create the graph
-graph = ReactiveSmartGraph()
+1. **Interviews:** One-on-one or group discussions with stakeholders.
+2. **Workshops:** Collaborative sessions to brainstorm and refine requirements.
+3. **Observation:** Sometimes called "job shadowing" - watch how people actually work.
+4. **Surveys:** Useful for gathering data from a large number of stakeholders.
+5. **Document Analysis:** Review existing documentation to uncover requirements.
 
-# Create a pipeline
-pipeline = graph.create_pipeline("SimpleLLM")
+> "My favorite technique is the 'Five Whys'," from the Toyota Production System. "When a stakeholder states a requirement, I ask 'why' five times. It helps dig down to the root of what they really need, not just what they think they want."
 
-# Add components to the pipeline
-pipeline.add_component(TextInputHandler("TextInput"))
-pipeline.add_component(CompletionComponent("LLM", model="gpt-4o-mini"))
+<Warning>
+  **Remember:** Requirements aren't set in stone. They often evolve as the
+  project progresses and stakeholders gain a better understanding of what's
+  possible.
+</Warning>
+## Scope Management: Drawing Lines in the Sand
 
-# Compile the graph
-graph.compile()
+Scope management is all about defining the boundaries of your project. It's like drawing a line in the sand and saying, "We'll do everything inside this line, but anything outside is for another day."
 
-# Execute the pipeline
-result = await graph.execute("SimpleLLM", "Tell me a joke")
-print(result)
-```
+### The Scope Statement: Your Project's Contract
 
-In this example, we create a simple pipeline that takes text input and passes it to an LLM for completion.
+The scope statement is a crucial document that outlines:
 
-## Next Steps
+- What's included in the project
+- What's explicitly excluded
+- Any assumptions or constraints
 
-Now that you understand the core concepts of SmartGraph, you're ready to dive deeper into how to control the flow of data through your pipelines. Head over to the [Controlling Flow](./pipeline) section to learn more about creating dynamic workflows using pipelines and input handlers.
+<Note>
+  **Try This:** Next time you're planning a vacation, try writing a scope
+  statement. Include what you'll do, what you won't do, and any assumptions
+  (like "assuming the weather is good"). It's great practice for project scope
+  management!
+</Note>
+### The Dreaded Scope Creep
+
+Scope creep is what happens when your project starts to expand beyond its original boundaries. It's like planning to build a doghouse and ending up with a three-story mansion.
+
+Tips to Manage Scope Creep:
+
+1. **Clear Documentation:** Make sure your scope statement is crystal clear.
+2. **Change Control Process:** Establish a formal process for approving changes to the scope.
+3. **Educate Stakeholders:** Help them understand the impact of scope changes on time and budget.
+4. **Learn to Say No:** Sometimes, the most important skill is knowing when to push back on new requests.
+
+> "I once had a project where the scope grew by 50% in the first month. We had to call a timeout, revisit the original objectives, and reset expectations with all stakeholders. It was tough, but it saved the project in the long run."
+
+## Putting It All Together: The BA Toolbelt
+
+Now that we've unpacked these key concepts, let's look at how they all fit together:
+
+1. **Stakeholders** help you understand the context and objectives of your project.
+2. **Requirements** define what needs to be done to meet those objectives.
+3. **Scope Management** ensures you stay focused on what's important and achievable.
+
+Think of these concepts as tools in your BA toolbelt. Like any good craftsperson, you'll need to practice using these tools to become proficient. But with time and experience, you'll know exactly which tool to reach for in any given situation.
+
+## The Bottom Line
+
+Understanding stakeholders, requirements, and scope management is crucial for any business analyst. These concepts form the foundation upon which all your BA work will be built. Master these, and you'll be well on your way to BA stardom!
+
+In the next page, we'll explore some of the key techniques and methodologies BAs use to put these concepts into practice. Get ready to add some serious skills to your growing BA repertoire!
+
+<Warning>
+  **Remember:** Business analysis is as much an art as it is a science. While
+  these concepts provide a solid framework, don't be afraid to get creative in
+  how you apply them. The best BAs are those who can adapt these principles to
+  fit the unique needs of each project and organization.
+</Warning>
